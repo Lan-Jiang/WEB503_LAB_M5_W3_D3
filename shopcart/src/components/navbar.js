@@ -10,6 +10,7 @@ import {
   } from "react-router-dom";
 import DisplayProducts from "./displayproducts";
 import ShowCart from "./showcart"
+import LogIn from "./login"
 
 function NavBar(props) {
     return (
@@ -42,7 +43,16 @@ function NavBar(props) {
                 <Route 
                     path="/showcart" 
                     element={
-                        <ShowCart cartitems={props.prods}/>}
+                        <ShowCart 
+                            cartitems={props.prods}
+                            totalQuantity={props.totalValue}
+                        />}
+                >
+                </Route>
+                <Route 
+                    path="/login" 
+                    element={
+                        <LogIn checkoutitems={props.prods}/>}
                 >
                 </Route>
             </Routes>
